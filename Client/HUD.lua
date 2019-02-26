@@ -6,10 +6,12 @@ HUD.assignmentCode = 0;
 -- Assignment codes
 HUD.assignments = {}
 HUD.assignments[1] = "Arrest or neutralize all ~r~suspects~w~."
+HUD.assignments[2] = "Transport the ~r~suspect~w~ to a ~g~police department~w~."
 
 -- Game tips
 HUD.Tips = {}
-HUD.Tips.howToArrest = true;
+HUD.Tips['arresting'] = true;
+HUD.Tips['placing_in_restraints'] = true;
 
 function HUD.Notification(message)
 	SetNotificationTextEntry("STRING")

@@ -23,6 +23,9 @@ entityBlip = {}
 -- Suspects array
 suspects = {}
 
+-- Detained array
+detained = {}
+
 -- actions
 Citizen.CreateThread(function()
     -- Register suspect groups
@@ -42,20 +45,29 @@ Citizen.CreateThread(function()
                 local targetFound, target = GetEntityPlayerIsFreeAimingAt(PlayerId())
                 if targetFound then
                     if (IsEntityAPed(target) == 1 and IsPedAPlayer(target) ~= true) then
-                        if (HUD.Tips.howToArrest == true) then
-                            HUD.Tips.howToArrest = false;
-                            HUD.Notification("You can arrest a subject by pressing E while aiming, or press E nearby to detain.");
-                        end
+                        ShowTip("arresting", "You can arrest a subject by pressing E while aiming, or press E nearby to detain.")
                         if IsControlPressed(0, Keys['E']) then
-                            TriggerServerEvent('PedManager.orderArrest', target)
-                            if (math.random(0, 2) == 1) then
-                                TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_freeze_01', 1.0)
-                            elseif (math.random(0, 2) == 1) then
-                                TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_yellPolice_01', 1.0)
+                            if ( IsEntityPlayingAnim( target, "random@arrests@busted", "idle_a", 3 ) ) then
+                                -- check if we're close enough to cuff
+                                if(GetDistancesFromPeds(playerPed, target) < 2)then
+                                    -- cuff
+                                    TriggerServerEvent('PedManager.placeCuffs', target)
+                                else
+                                    -- too far
+                                    HUD.Notification("You're too far to place the suspect in restraints.")
+                                end
                             else
-                                TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_yellPolice_02', 1.0)
+                                TriggerServerEvent('PedManager.orderArrest', target)
+                                -- Officer's voice
+                                if (math.random(0, 2) == 1) then
+                                    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_freeze_01', 1.0)
+                                elseif (math.random(0, 2) == 1) then
+                                    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_yellPolice_01', 1.0)
+                                else
+                                    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.5, 'officer_yellPolice_02', 1.0)
+                                end
+                                Citizen.Wait(1500)
                             end
-                            Citizen.Wait(1500)
                         end
                     end
                 end
@@ -98,7 +110,7 @@ Citizen.CreateThread(function()
         if(tonumber(#suspects) > 0)then
             SetFakeWantedLevel(1)
             for i, suspect in ipairs(suspects)do
-                if(IsEntityAPed(suspect['ped']) ~= 1 or IsPedDeadOrDying(suspect['ped'], 1) == 1)then
+                if(DoesEntityExist(suspect['ped']) ~= 1 or IsEntityAPed(suspect['ped']) ~= 1 or IsPedDeadOrDying(suspect['ped'], 1) == 1)then
                     if(DoesBlipExist(suspect['blip']) == 1)then
                         RemoveBlip(suspect['blip']);
                     end
@@ -114,88 +126,3 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
--- listeners
-RegisterNetEvent('Interactions.addToWanted')
-AddEventHandler('Interactions.addToWanted', function(target)
-    AddTargetToWanted(target)
-end)
-function AddTargetToWanted(target)
-    if (IsEntityAPed(target) == 1) then
-        SetPedRelationshipGroupHash(target, GetHashKey("SUSPECTS"))
-        -- store to suspects array
-        local suspectId = tonumber(#suspects) + 1;
-        suspects[suspectId]         = {}
-        suspects[suspectId]['id']   = suspectId
-        suspects[suspectId]['ped']  = target
-        entityBlip[target]          = AddBlipForEntity(target, true)
-        suspects[suspectId]['blip'] = entityBlip[target]
-        HUD.SetAssignment(1)
-    end
-end
-
-function GetNearbyPeds(X, Y, Z, Radius)
-    local NearbyPeds = {}
-    if tonumber(X) and tonumber(Y) and tonumber(Z) then
-        if tonumber(Radius) then
-            for Ped in EnumeratePeds() do
-                if DoesEntityExist(Ped) then
-                    local PedPosition = GetEntityCoords(Ped, false)
-                    local pedDistance = Vdist(X, Y, Z, PedPosition.x, PedPosition.y, PedPosition.z);
-                    if (pedDistance <= Radius and IsEntityAPed(Ped) == 1 and Ped ~= playerPed and IsPedAPlayer(Ped) ~= true and GetPedType(Ped) ~= 20 and GetPedType(Ped) ~= 21 and GetPedType(Ped) ~= 27 and GetPedType(Ped) ~= 6) then
-                        table.insert(NearbyPeds, Ped)
-                    end
-                end
-            end
-        else
-            print("GetNearbyPeds was given an invalid radius!")
-        end
-    else
-        print("GetNearbyPeds was given invalid coordinates!")
-    end
-    return NearbyPeds
-end
-function GetNearbyPed(X, Y, Z, Radius)
-    local NearbyPed = nil;
-    local closestPed = Radius;
-    if tonumber(X) and tonumber(Y) and tonumber(Z) then
-        if tonumber(Radius) then
-            for Ped in EnumeratePeds() do
-                if DoesEntityExist(Ped) then
-                    local PedPosition = GetEntityCoords(Ped, false)
-                    local pedDistance = Vdist(X, Y, Z, PedPosition.x, PedPosition.y, PedPosition.z);
-                    if (pedDistance <= Radius and pedDistance < closestPed and IsEntityAPed(Ped) == 1 and Ped ~= playerPed and IsPedAPlayer(Ped) ~= true and GetPedType(Ped) ~= 20 and GetPedType(Ped) ~= 21 and GetPedType(Ped) ~= 27 and GetPedType(Ped) ~= 6) then
-                        closestPed = pedDistance;
-                        NearbyPed = Ped;
-                    end
-                end
-            end
-        else
-            print("GetNearbyPed was given an invalid radius!")
-        end
-    else
-        print("GetNearbyPed was given invalid coordinates!")
-    end
-    return NearbyPed
-end
-function GetNearbyPolice(X, Y, Z, Radius)
-    local NearbyPolice = {}
-    if tonumber(X) and tonumber(Y) and tonumber(Z) then
-        if tonumber(Radius) then
-            for Ped in EnumeratePeds() do
-                if DoesEntityExist(Ped) then
-                    local PedPosition = GetEntityCoords(Ped, false)
-                    local pedDistance = Vdist(X, Y, Z, PedPosition.x, PedPosition.y, PedPosition.z);
-                    if (pedDistance <= Radius and IsEntityAPed(Ped) == 1 and Ped ~= playerPed and IsPedAPlayer(Ped) ~= true and GetPedType(Ped) == 6) then
-                        table.insert(NearbyPolice, Ped)
-                    end
-                end
-            end
-        else
-            print("GetNearbyPolice was given an invalid radius!")
-        end
-    else
-        print("GetNearbyPolice was given invalid coordinates!")
-    end
-    return NearbyPolice
-end

@@ -9,10 +9,70 @@ PedManager = {}
 -- Ped Suspects
 PedManager.suspects = {}
 
+-- when making a ped a suspect
 RegisterServerEvent('PedManager.makeSuspect')
 AddEventHandler('PedManager.makeSuspect', function(target)
-    local players = GetPlayers()
-    for _, i in ipairs(players) do
-        TriggerClientEvent('Interactions.addToWanted', i, target)
-    end
+    PedManager.MakeSuspect(target)
 end)
+function PedManager.MakeSuspect(target)
+    PedManager.suspects[target] = true;
+    -- add suspect each player machine
+    local players = GetPlayers()
+    for _, player in ipairs(players) do
+        TriggerClientEvent('Engine.addToWanted', player, target)
+    end
+end
+
+-- when making a ped a suspect fighter
+RegisterServerEvent('PedManager.makeSuspectShooter')
+AddEventHandler('PedManager.makeSuspectShooter', function(target)
+    PedManager.MakeSuspectFighter(target)
+end)
+function PedManager.MakeSuspectFighter(target)
+    PedManager.MakeSuspect(target)
+    local players = GetPlayers()
+    for _, player in ipairs(players) do
+        TriggerClientEvent('PedManager.pedFightPlayers', player, target, "WEAPON_PISTOL")
+    end
+end
+
+-- when placing a ped under arrest
+RegisterServerEvent('PedManager.orderArrest')
+AddEventHandler('PedManager.orderArrest', function(target)
+    PedManager.OrderArrest(target)
+end)
+function PedManager.OrderArrest(target)
+    if(false)then -- attack todo: fix issue where melee doesn't work
+        PedManager.MakeSuspect(target)
+        -- resist
+        local players = GetPlayers()
+        for _, player in ipairs(players) do
+            TriggerClientEvent('PedManager.pedFightPlayers', player, target)
+        end
+    elseif(math.random(0, 4) == 3)then -- attack with gun
+        PedManager.MakeSuspect(target)
+        -- resist
+        local players = GetPlayers()
+        for _, player in ipairs(players) do
+            TriggerClientEvent('PedManager.pedFightPlayers', player, target, "WEAPON_PISTOL")
+        end
+    else
+        -- cooperate
+        local players = GetPlayers()
+        for _, player in ipairs(players) do
+            TriggerClientEvent('PedManager.pedSurrenderToArrest', player, target)
+        end
+    end
+end
+
+-- when placing a ped in cuffs
+RegisterServerEvent('PedManager.placeCuffs')
+AddEventHandler('PedManager.placeCuffs', function(target)
+    PedManager.PlaceCuffs(target)
+end)
+function PedManager.PlaceCuffs(target)
+    local players = GetPlayers()
+    for _, player in ipairs(players) do
+        TriggerClientEvent('PedManager.pedStandInCuffs', player, target, source)
+    end
+end

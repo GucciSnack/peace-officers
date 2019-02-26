@@ -15,11 +15,13 @@ server_scripts {
 
 client_scripts {
 	--peace officer core scripts
+	"Client/Engine.lua",
 	"Client/PlayerProperties.lua",
 	"Client/Commands.lua",
 	"Client/HUD.lua",
 	"Client/Spawn.lua",
 	"Client/Interactions.lua",
+	"Client/PedManager.lua",
 
 	--Entity enumerator
 	"Vendors/Entityiter/entityiter.lua",

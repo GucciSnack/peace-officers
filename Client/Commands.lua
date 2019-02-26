@@ -29,10 +29,35 @@ RegisterCommand('car', function(source, args, rawCommand)
     end)
 end)
 
+RegisterCommand('incident', function(source, args, rawCommand)
+    local x, y, z = table.unpack(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 8.0, 0.5))
+    local type = args[1]
+    if type == nil then
+        type = 7
+    elseif type == "police" then
+        type = 7
+    elseif type == "fire" then
+        type = 3
+    elseif type == "medic" then
+        type = 5
+    end
+    local x, y, z = table.unpack(GetEntityCoords(playerPed, true));
+    local outIncidentId
+    CreateIncident(type, x, y, z, 0, 6.0, outIncidentId);
+end)
+
 RegisterCommand('mkcriminal', function(source, args, rawCommand)
     local x, y, z = table.unpack(GetEntityCoords(playerPed, true));
     local newCriminal = GetNearbyPed(x, y, z, 50.0)
     if (IsEntityAPed(newCriminal) == 1) then
         TriggerServerEvent('PedManager.makeSuspect', newCriminal)
+    end
+end)
+
+RegisterCommand('mkshooter', function(source, args, rawCommand)
+    local x, y, z = table.unpack(GetEntityCoords(playerPed, true));
+    local newCriminal = GetNearbyPed(x, y, z, 50.0)
+    if (IsEntityAPed(newCriminal) == 1) then
+        TriggerServerEvent('PedManager.makeSuspectShooter', newCriminal)
     end
 end)
