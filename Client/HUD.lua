@@ -1,6 +1,12 @@
 -- HUD Functions
 HUD = {};
 
+-- Assignment string
+HUD.assignmentCode = 0;
+-- Assignment codes
+HUD.assignments = {}
+HUD.assignments[1] = "Arrest or neutralize all ~r~suspects~w~."
+
 -- Game tips
 HUD.Tips = {}
 HUD.Tips.howToArrest = true;
@@ -38,7 +44,11 @@ Citizen.CreateThread(function()
 	while true do
 		HUD.DrawText(0.45, 0.005, "Rank: ~b~".. PlayerProperties.rank, 255, 255, 255, 150, 0, 0.25)
 		HUD.DrawText(0.55, 0.005, "~b~".. PlayerProperties.exp .."~w~/~b~".. PlayerProperties.expGoal .." ~w~Until Next Level", 255, 255, 255, 150, 0, 0.25)
-		HUD.DrawText(0.18, 0.93, "No Current Assignment", 255, 255, 255, 150)
+		if(HUD.assignmentCode ~= 0)then
+			HUD.DrawText(0.18, 0.93, HUD.assignments[tonumber(HUD.assignmentCode)], 255, 255, 255, 255)
+		else
+			HUD.DrawText(0.18, 0.93, "No Current Assignment", 255, 255, 255, 150)
+		end
 		HUD.DrawText(0.18, 0.96, "Peace Officers BETA 1.0.0")
 		Citizen.Wait(0)
 	end
@@ -50,3 +60,7 @@ AddEventHandler('notification', function(message)
 	AddTextComponentString(message)
 	DrawNotification(0,1)
 end)
+
+function HUD.SetAssignment(code)
+	HUD.assignmentCode = tonumber(code);
+end

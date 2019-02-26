@@ -107,6 +107,10 @@ Citizen.CreateThread(function()
             end
         else
             SetFakeWantedLevel(0)
+            -- remove assignment code if assigned
+            if(HUD.assignmentCode == 1)then
+                HUD.SetAssignment(0)
+            end
         end
     end
 end)
@@ -126,6 +130,7 @@ function AddTargetToWanted(target)
         suspects[suspectId]['ped']  = target
         entityBlip[target]          = AddBlipForEntity(target, true)
         suspects[suspectId]['blip'] = entityBlip[target]
+        HUD.SetAssignment(1)
     end
 end
 
