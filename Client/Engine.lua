@@ -3,10 +3,14 @@
 --- Created by Palm Beah Games.
 --- DateTime: 2/26/2019 3:07 AM
 ---
+--- Entity Data
+EntityData = {}
+
 RegisterNetEvent('Engine.addToWanted')
 AddEventHandler('Engine.addToWanted', function(target)
     AddTargetToWanted(target)
 end)
+-- todo: merge wanted, detained, and actors into one entity array under an entity 'class'
 function AddTargetToWanted(target)
     if (IsEntityAPed(target) == 1) then
         --SetPedRelationshipGroupHash(target, GetHashKey("SUSPECTS"))
@@ -19,7 +23,23 @@ function AddTargetToWanted(target)
         suspects[suspectId]['blip']         = entityBlip[target]
         suspects[suspectId]['action_code']  = "";
         HUD.SetAssignment(1)
+        return suspectId
     end
+    return nil
+end
+function AddTargetToActors(target)
+    if (IsEntityAPed(target) == 1) then
+        --SetPedRelationshipGroupHash(target, GetHashKey("SUSPECTS"))
+        -- store to suspects array
+        local actorId = tonumber(#PedManager.pedActors) + 1;
+        PedManager.pedActors[actorId]                 = {}
+        PedManager.pedActors[actorId]['id']           = actorId
+        PedManager.pedActors[actorId]['ped']          = target
+        PedManager.pedActors[actorId]['blip']         = nil
+        PedManager.pedActors[actorId]['action_code']  = ""
+        return actorId
+    end
+    return nil
 end
 function AddTargetToDetained(target, arrestingOfficer)
     if (IsEntityAPed(target) == 1) then
@@ -36,7 +56,9 @@ function AddTargetToDetained(target, arrestingOfficer)
         TaskSetBlockingOfNonTemporaryEvents(target, true)
         SetPedFleeAttributes(target, 0, 0)
         HUD.SetAssignment(2)
+        return detainedId
     end
+    return nil
 end
 function RemoveTargetFromWanted(target)
     local suspectId = GetSuspectId(target)
@@ -45,6 +67,15 @@ function RemoveTargetFromWanted(target)
     end
     if(suspectId ~= nil)then
         suspects[suspectId] = nil
+    end
+end
+function RemoveTargetFromActors(target)
+    local actorId = GetActorId(target)
+    if(DoesBlipExist(entityBlip[target]) == 1)then
+        RemoveBlip(entityBlip[target]);
+    end
+    if(actorId ~= nil)then
+        PedManager.pedActors[actorId] = nil
     end
 end
 function RemoveTargetFromDetained(target)
@@ -64,6 +95,15 @@ function GetSuspectId(target)
         end
     end
     return suspectId;
+end
+function GetActorId(target)
+    local actorId = nil;
+    for i, actor in ipairs(PedManager.pedActors)do
+        if(actor['ped'] == target)then
+            actorId = i
+        end
+    end
+    return actorId;
 end
 function GetDetainedId(target)
     local detainedId = nil;
@@ -202,5 +242,21 @@ function ShowTip(tipVariable, message)
     if (HUD.Tips[tipVariable] == true) then
         HUD.Tips[tipVariable] = false;
         HUD.Notification(message);
+    end
+end
+function SetEntityData(ped, key, value)
+    if(DoesEntityExist(ped) == 1) then
+        if(EntityData[ped] == nil)then
+            EntityData[ped] = {}
+        end
+        EntityData[ped][key] = value
+    end
+end
+function GetEntityData(ped, key)
+    if(DoesEntityExist(ped) == 1) then
+        if(EntityData[ped] == nil)then
+            return nil
+        end
+        return EntityData[ped][key]
     end
 end

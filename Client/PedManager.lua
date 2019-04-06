@@ -4,12 +4,14 @@
 --- DateTime: 2/26/2019 12:15 AM
 ---
 PedManager = {}
+PedManager.pedActors = {}
+
 -- Sets ped to fight players
-RegisterNetEvent('PedManager.pedFightPlayers')
-AddEventHandler('PedManager.pedFightPlayers', function(target, weaponHash)
-    PedManager.PedFightPlayers(target, weaponHash)
+RegisterNetEvent('PedManager.PedAttackOfficers')
+AddEventHandler('PedManager.PedAttackOfficers', function(target, weaponHash)
+    PedManager.PedAttackOfficers(target, weaponHash)
 end)
-function PedManager.PedFightPlayers(target, weaponHash)
+function PedManager.PedAttackOfficers(target, weaponHash)
     weaponHash = weaponHash or 0;
     suspects[GetSuspectId(target)]['action_code'] = 'attack_players'
     TaskSetBlockingOfNonTemporaryEvents(target, true)
@@ -23,8 +25,8 @@ function PedManager.PedFightPlayers(target, weaponHash)
     ClearPedTasks(target)
 end
 -- Sets ped to surrender to arrest
-RegisterNetEvent('PedManager.pedSurrenderToArrest')
-AddEventHandler('PedManager.pedSurrenderToArrest', function(target)
+RegisterNetEvent('PedManager.PedSurrenderToArrest')
+AddEventHandler('PedManager.PedSurrenderToArrest', function(target)
     PedManager.PedSurrenderToArrest(target)
 end)
 function PedManager.PedSurrenderToArrest(target)
@@ -70,11 +72,25 @@ function PedManager.PedStandInCuffs(target, arrestingOfficer)
         HUD.SetAssignment(0)
     end
 end
+-- Sets ped to flee
+RegisterNetEvent('PedManager.makeSubjectFleeFromPed')
+AddEventHandler('PedManager.makeSubjectFleeFromPed', function(target, ped)
+    PedManager.MakeSubjectFlee(target, ped)
+end)
+function PedManager.MakeSubjectFleeFromPed(target, ped)
+    TaskSetBlockingOfNonTemporaryEvents(target, true)
+    SetPedFleeAttributes(target, 1, 1)
+    SetPedCombatAttributes(target, 46, 0)
+    SetPedCombatAttributes(target, 1424, 0)
+    local actorId = AddTargetToActors(target)
+    PedManager.pedActors[actorId]["action_code"] = "flee_from_ped"
+    SetEntityData(target, 'fleeing_from', ped)
+end
 
 -- PED ACTIONS
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(500)
+        Citizen.Wait(800)
         -- handle suspect actions
         for i, suspect in ipairs(suspects)do
             if(DoesEntityExist(suspect['ped']) == 1 and IsEntityAPed(suspect['ped']) == 1 and IsPedDeadOrDying(suspect['ped'], 1) ~= 1)then
@@ -95,6 +111,16 @@ Citizen.CreateThread(function()
                 -- perform action code
                 if(subject['action_code'] == 'follow') then
                     TaskGoToEntity(subject['ped'], subject['arresting_officer'], -1, 0.5, 10.0, 1073741824.0, 0)
+                    SetPedKeepTask(subject['ped'], true)
+                end
+            end
+        end
+        -- handle actor actions
+        for i, subject in ipairs(PedManager.pedActors)do
+            if(DoesEntityExist(subject['ped']) == 1 and IsEntityAPed(subject['ped']) == 1 and IsPedDeadOrDying(subject['ped'], 1) ~= 1)then
+                -- perform action code
+                if(subject['action_code'] == 'flee_from_officer') then
+                    TaskSmartFleePed(subject['ped'], GetEntityData(subject['ped'], 'fleeing_from'), -1, 0.5, 10.0, 1073741824.0, 0)
                     SetPedKeepTask(subject['ped'], true)
                 end
             end
