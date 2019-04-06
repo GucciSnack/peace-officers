@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8519e31-f216-4c75-8a15-a60fcb0175d7" name="peace-officers-2 Detaining &amp; Investigating" comment="">
+      <change beforePath="$PROJECT_DIR$/Client/Engine.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Engine.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/PedManager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Client/PedManager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/PedManager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Server/PedManager.lua" afterDir="false" />
+    </list>
+    <list id="2fcc536b-71b9-474d-b045-17f70c6236f4" name="Default Changelist" comment="" />
+    <ignored path=".idea/encodings.xml" />
+    <ignored path=".idea/misc.xml" />
+    <ignored path=".idea/modules.xml" />
+    <ignored path=".idea/peace-officers.iml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="NewLua" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>updateChat</find>
+      <find>playerPed</find>
+      <find>setcamera(t</find>
+      <find>TriggerServerEvent</find>
+      <find>police</find>
+      <find>WriteCoords</find>
+      <find>loadcha</find>
+      <find>--gear</find>
+      <find>key</find>
+      <find>EnumeratePeds</find>
+      <find>PlayWithinDistance</find>
+      <find>E</find>
+      <find>46</find>
+      <find>GetEntityCoords</find>
+      <find>loadCharacter</find>
+      <find>NearbyPolice</find>
+      <find>loadch</find>
+      <find>#</find>
+      <find>orderArrest</find>
+      <find>load</find>
+      <find>getnearbypolice</find>
+      <find>SetPedCombatAbility</find>
+      <find>TURN</find>
+      <find>SetFakeWantedLevel</find>
+      <find>Interactions.addToWanted</find>
+      <find>AddTargetToDetained</find>
+      <find>ShowTip</find>
+      <find>detain</find>
+      <find>makeSubjectFleeFromPed</find>
+      <find>pedSurrenderToArrest</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>ccMenu</replace>
+      <replace>CC.updateCharacter()</replace>
+      <replace>Engine.addToWanted</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="GucciSnack" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="peace-officers" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../CC-master/server.lua" />
+        <option value="$PROJECT_DIR$/../CC-master/cc.lua" />
+        <option value="$PROJECT_DIR$/Vendors/cc.lua" />
+        <option value="$PROJECT_DIR$/Vendors/warmenu.lua" />
+        <option value="$PROJECT_DIR$/../CC-master/__resource.lua" />
+        <option value="$PROJECT_DIR$/Vendors/Client/warmenu.lua" />
+        <option value="$PROJECT_DIR$/Vendors/Server/cc.lua" />
+        <option value="$PROJECT_DIR$/Vendors/Client/Test" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.sql" />
+        <option value="$PROJECT_DIR$/Vendors/Client/cc.lua" />
+        <option value="$PROJECT_DIR$/Vendors/CharacterCreator/Client/Test" />
+        <option value="$PROJECT_DIR$/Vendors/CharacterCreator/Test" />
+        <option value="$PROJECT_DIR$/Server/CalloutManager.lua" />
+        <option value="$PROJECT_DIR$/Vendors/Entityiter/entityiter.lua" />
+        <option value="$PROJECT_DIR$/Vendors/InteractSound/client/html/index.html" />
+        <option value="$PROJECT_DIR$/../../server.cfg" />
+        <option value="$PROJECT_DIR$/../InteractSound/__resource.lua" />
+        <option value="$PROJECT_DIR$/Client/Spawn.lua" />
+        <option value="$PROJECT_DIR$/Server/GameManager.lua" />
+        <option value="$PROJECT_DIR$/Client/PlayerProperties.lua" />
+        <option value="$PROJECT_DIR$/Vendors/CharacterCreator/Client/cc.lua" />
+        <option value="$PROJECT_DIR$/Vendors/CharacterCreator/Client/warmenu.lua" />
+        <option value="$PROJECT_DIR$/Vendors/CharacterCreator/Server/cc.lua" />
+        <option value="$PROJECT_DIR$/__resource.lua" />
+        <option value="$PROJECT_DIR$/Client/HUD.lua" />
+        <option value="$PROJECT_DIR$/Client/Commands.lua" />
+        <option value="$PROJECT_DIR$/Client/Engine.lua" />
+        <option value="$PROJECT_DIR$/Client/Interactions.lua" />
+        <option value="$PROJECT_DIR$/Client/PedManager.lua" />
+        <option value="$PROJECT_DIR$/Server/PedManager.lua" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="109" />
+    <option name="y" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="997" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="peace-officers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peace-officers" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="peace-officers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peace-officers" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="peace-officers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="tasks.servers" />
+    <property name="tasks.close.task.update.state.enabled" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\FXServer\resources\peace-officers\Vendors\CharacterCreator" />
+      <recent name="C:\FXServer\resources\peace-officers\Vendors\Client" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <branch name="master" repository="C:\FXServer\resources\peace-officers" />
+      <changelist id="2fcc536b-71b9-474d-b045-17f70c6236f4" name="Default Changelist" comment="" />
+      <created>1550568881576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551228656986</updated>
+      <workItem from="1550568890609" duration="33000" />
+      <workItem from="1550569063491" duration="73637000" />
+      <workItem from="1550668027429" duration="6368000" />
+      <workItem from="1550710721847" duration="73000" />
+      <workItem from="1551157765969" duration="2648000" />
+      <workItem from="1551178039362" duration="2360000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adding to assignment message.">
+      <created>1551160331557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551160331557</updated>
+    </task>
+    <task id="peace-officers-1" summary="Arresting Suspects">
+      <branch name="master" repository="C:\FXServer\resources\peace-officers" original="true" />
+      <branch name="peace-officers-1" repository="C:\FXServer\resources\peace-officers" />
+      <created>1550701403000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/GucciSnack/peace-officers/issues/1</url>
+      <option name="number" value="1" />
+      <option name="presentableId" value="peace-officers-1" />
+      <option name="project" value="peace-officers" />
+      <option name="type" value="BUG" />
+      <updated>1551178038470</updated>
+      <workItem from="1551160457243" duration="17426000" />
+    </task>
+    <task id="LOCAL-00002" summary="Suspects can now be arrested.">
+      <created>1551177685272</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551177685272</updated>
+    </task>
+    <task active="true" id="peace-officers-2" summary="Detaining &amp; Investigating">
+      <branch name="master" repository="C:\FXServer\resources\peace-officers" original="true" />
+      <branch name="peace-officers-2" repository="C:\FXServer\resources\peace-officers" />
+      <changelist id="e8519e31-f216-4c75-8a15-a60fcb0175d7" name="peace-officers-2 Detaining &amp; Investigating" comment="" />
+      <created>1550701469000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/GucciSnack/peace-officers/issues/2</url>
+      <option name="number" value="2" />
+      <option name="presentableId" value="peace-officers-2" />
+      <option name="project" value="peace-officers" />
+      <option name="type" value="BUG" />
+      <updated>1551228657312</updated>
+      <workItem from="1551228658078" duration="3618000" />
+      <workItem from="1551249176850" duration="272000" />
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers>
+      <GitHub url="https://github.com">
+        <token>dfccdf9fdf98df9fdf9fdfcbdfc9df9ddf9ddf99df9bdfcfdfc9df9cdf92df9bdf9fdf9adfc8dfcfdfcfdf92dfcfdf98df99df9ddfcbdf93df9bdf93df9bdf99dfccdf92dfc8df93df9cdfc8df98df9a</token>
+        <option name="preferredCloseTaskState">
+          <CustomTaskState id="RESOLVED" predefined="true" name="Resolved" />
+        </option>
+        <option name="repoAuthor" value="GucciSnack" />
+        <option name="repoName" value="peace-officers" />
+      </GitHub>
+    </servers>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="106435000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23027718" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="LuaCheck" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.317757" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Adding to assignment message." />
+    <MESSAGE value="Suspects can now be arrested." />
+    <option name="LAST_COMMIT_MESSAGE" value="Suspects can now be arrested." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../CC-master/cc.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="313" column="4" lean-forward="true" selection-end-line="1243" />
+          <folding>
+            <element signature="e#20#2448#1" />
+            <element signature="e#410#745#0" />
+            <element signature="e#754#1407#0" />
+            <element signature="e#1615#1813#0" />
+            <element signature="e#1823#2222#0" />
+            <element signature="e#2526#2611#1" />
+            <element signature="e#2630#2885#1" />
+            <element signature="e#2904#3165#1" />
+            <element signature="e#3186#3266#1" />
+            <element signature="e#3288#3368#1" />
+            <element signature="e#3411#3413#0" />
+            <element signature="e#3479#3482#0" />
+            <element signature="e#3522#3524#0" />
+            <element signature="e#3557#3560#0" />
+            <element signature="e#3697#3699#0" />
+            <element signature="e#3733#3736#0" />
+            <element signature="e#3794#3796#0" />
+            <element signature="e#3830#3833#0" />
+            <element signature="e#3849#4030#1" />
+            <element signature="e#4427#4429#0" />
+            <element signature="e#4463#4466#0" />
+            <element signature="e#4503#4505#0" />
+            <element signature="e#4540#4543#0" />
+            <element signature="e#4560#4815#0" />
+            <element signature="e#4615#4617#0" />
+            <element signature="e#4653#4656#0" />
+            <element signature="e#4674#4808#1" />
+            <element signature="e#5641#6109#0" />
+            <element signature="e#5752#5804#0" />
+            <element signature="e#5944#6064#0" />
+            <element signature="e#6140#6770#0" />
+            <element signature="e#6157#6603#0" />
+            <element signature="e#6626#6760#0" />
+            <element signature="e#7156#7597#0" />
+            <element signature="e#7332#7581#1" />
+            <element signature="e#7630#8494#0" />
+            <element signature="e#8532#11043#0" />
+            <element signature="e#8562#9061#0" />
+            <element signature="e#9088#9680#0" />
+            <element signature="e#9175#9259#0" />
+            <element signature="e#10316#10475#0" />
+            <element signature="e#10592#11034#0" />
+            <element signature="e#10655#11017#0" />
+            <element signature="e#11081#12072#0" />
+            <element signature="e#11319#11401#0" />
+            <element signature="e#11427#11708#1" />
+            <element signature="e#11734#11995#0" />
+            <element signature="e#11777#11917#0" />
+            <element signature="e#12116#12281#0" />
+            <element signature="e#12235#12265#0" />
+            <element signature="e#12385#13071#0" />
+            <element signature="e#12912#13013#0" />
+            <element signature="e#13115#13292#0" />
+            <element signature="e#13411#13479#0" />
+            <element signature="e#13538#13675#0" />
+            <element signature="e#13565#13635#0" />
+            <element signature="e#13723#14028#0" />
+            <element signature="e#14070#21142#0" />
+            <element signature="e#14089#21138#0" />
+            <element signature="e#14150#14947#0" />
+            <element signature="e#14316#14482#0" />
+            <element signature="e#14491#14507#0" />
+            <element signature="e#14571#14580#0" />
+            <element signature="e#14640#14648#0" />
+            <element signature="e#14716#14746#0" />
+            <element signature="e#14789#14901#0" />
+            <element signature="e#14995#16185#0" />
+            <element signature="e#15114#15281#0" />
+            <element signature="e#15290#15298#0" />
+            <element signature="e#15414#15587#0" />
+            <element signature="e#15596#15612#0" />
+            <element signature="e#15700#15841#0" />
+            <element signature="e#15849#15857#0" />
+            <element signature="e#15945#16073#0" />
+            <element signature="e#16081#16089#0" />
+            <element signature="e#16143#16151#0" />
+            <element signature="e#16233#17097#0" />
+            <element signature="e#16391#16588#0" />
+            <element signature="e#16597#16609#0" />
+            <element signature="e#16633#16977#0" />
+            <element signature="e#16735#16934#0" />
+            <element signature="e#17050#17058#0" />
+            <element signature="e#17147#17598#0" />
+            <element signature="e#17294#17489#0" />
+            <element signature="e#17359#17481#0" />
+            <element signature="e#17558#17566#0" />
+            <element signature="e#17644#20822#0" />
+            <element signature="e#17681#19270#0" />
+            <element signature="e#17819#18519#0" />
+            <element signature="e#17859#18120#0" />
+            <element signature="e#18147#18406#0" />
+            <element signature="e#18528#18573#0" />
+            <element signature="e#18729#18851#0" />
+            <element signature="e#18860#18872#0" />
+            <element signature="e#19031#19147#0" />
+            <element signature="e#19156#19168#0" />
+            <element signature="e#19230#19252#0" />
+            <element signature="e#19274#20771#0" />
+            <element signature="e#19300#20762#0" />
+            <element signature="e#19387#20747#0" />
+            <element signature="e#19530#19737#0" />
+            <element signature="e#19746#19778#0" />
+            <element signature="e#19868#20106#0" />
+            <element signature="e#20115#20131#0" />
+            <element signature="e#20185#20612#0" />
+            <element signature="e#20335#20555#0" />
+            <element signature="e#20564#20584#0" />
+            <element signature="e#20681#20705#0" />
+            <element signature="e#20930#20990#0" />
+            <element signature="e#21036#21087#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CC-master/warmenu.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="175" lean-forward="true" selection-end-line="577" selection-end-column="3" />
+          <folding>
+            <element signature="e#582#669#0" />
+            <element signature="e#604#608#0" />
+            <element signature="e#665#668#0" />
+            <element signature="e#726#902#0" />
+            <element signature="e#755#898#0" />
+            <element signature="e#940#1041#0" />
+            <element signature="e#965#969#0" />
+            <element signature="e#1007#1011#0" />
+            <element signature="e#1007#1011#0" />
+            <element signature="e#1037#1040#0" />
+            <element signature="e#1102#1502#0" />
+            <element signature="e#1131#1498#0" />
+            <element signature="e#1222#1226#0" />
+            <element signature="e#1287#1290#0" />
+            <element signature="e#1315#1490#0" />
+            <element signature="e#1380#1384#0" />
+            <element signature="e#1448#1451#0" />
+            <element signature="e#1591#2171#0" />
+            <element signature="e#1714#1718#0" />
+            <element signature="e#1764#1767#0" />
+            <element signature="e#1799#2042#0" />
+            <element signature="e#1818#1822#0" />
+            <element signature="e#1865#1871#0" />
+            <element signature="e#1887#2034#0" />
+            <element signature="e#2227#2228#0" />
+            <element signature="e#2299#2302#0" />
+            <element signature="e#2331#2733#0" />
+            <element signature="e#2362#2729#0" />
+            <element signature="e#2767#3666#0" />
+            <element signature="e#2798#3662#0" />
+            <element signature="e#3410#3414#0" />
+            <element signature="e#3654#3657#0" />
+            <element signature="e#3712#5445#0" />
+            <element signature="e#3922#3926#0" />
+            <element signature="e#3964#3970#0" />
+            <element signature="e#4106#4110#0" />
+            <element signature="e#4221#4224#0" />
+            <element signature="e#4248#5441#0" />
+            <element signature="e#4558#4768#0" />
+            <element signature="e#4772#4996#0" />
+            <element signature="e#5246#5250#0" />
+            <element signature="e#5433#5436#0" />
+            <element signature="e#6777#8193#0" />
+            <element signature="e#6803#8063#0" />
+            <element signature="e#6923#6927#0" />
+            <element signature="e#6992#6996#0" />
+            <element signature="e#6992#6996#0" />
+            <element signature="e#7075#7078#0" />
+            <element signature="e#8063#8067#0" />
+            <element signature="e#8189#8192#0" />
+            <element signature="e#8228#8229#0" />
+            <element signature="e#8253#8256#0" />
+            <element signature="e#8288#8576#0" />
+            <element signature="e#8317#8483#0" />
+            <element signature="e#8483#8487#0" />
+            <element signature="e#8572#8575#0" />
+            <element signature="e#8614#8615#0" />
+            <element signature="e#8645#8648#0" />
+            <element signature="e#8691#8811#0" />
+            <element signature="e#8718#8722#0" />
+            <element signature="e#8777#8781#0" />
+            <element signature="e#8777#8781#0" />
+            <element signature="e#8807#8810#0" />
+            <element signature="e#8845#9421#0" />
+            <element signature="e#8876#9417#0" />
+            <element signature="e#8927#9268#0" />
+            <element signature="e#9272#9409#0" />
+            <element signature="e#9465#10440#0" />
+            <element signature="e#9509#9513#0" />
+            <element signature="e#9597#9600#0" />
+            <element signature="e#9632#10293#0" />
+            <element signature="e#9807#10263#0" />
+            <element signature="e#9853#10083#0" />
+            <element signature="e#10142#10146#0" />
+            <element signature="e#10251#10254#0" />
+            <element signature="e#10297#10436#0" />
+            <element signature="e#10483#10820#0" />
+            <element signature="e#10505#10674#0" />
+            <element signature="e#10542#10666#0" />
+            <element signature="e#10674#10678#0" />
+            <element signature="e#10798#10801#0" />
+            <element signature="e#10873#11161#0" />
+            <element signature="e#10912#10916#0" />
+            <element signature="e#10944#10947#0" />
+            <element signature="e#10990#11139#0" />
+            <element signature="e#11232#12662#0" />
+            <element signature="e#11265#12605#0" />
+            <element signature="e#11569#11753#0" />
+            <element signature="e#11625#11629#0" />
+            <element signature="e#11657#11663#0" />
+            <element signature="e#11702#11706#0" />
+            <element signature="e#11741#11744#0" />
+            <element signature="e#11918#11922#0" />
+            <element signature="e#11953#11959#0" />
+            <element signature="e#12095#12099#0" />
+            <element signature="e#12203#12206#0" />
+            <element signature="e#12228#12549#0" />
+            <element signature="e#12609#12653#0" />
+            <element signature="e#12745#13601#0" />
+            <element signature="e#12934#12938#0" />
+            <element signature="e#13001#13004#0" />
+            <element signature="e#13052#13160#0" />
+            <element signature="e#13181#13491#0" />
+            <element signature="e#13217#13221#0" />
+            <element signature="e#13254#13258#0" />
+            <element signature="e#13291#13295#0" />
+            <element signature="e#13291#13295#0" />
+            <element signature="e#13322#13325#0" />
+            <element signature="e#13334#13340#0" />
+            <element signature="e#13366#13370#0" />
+            <element signature="e#13412#13416#0" />
+            <element signature="e#13449#13453#0" />
+            <element signature="e#13449#13453#0" />
+            <element signature="e#13471#13474#0" />
+            <element signature="e#13483#13486#0" />
+            <element signature="e#13491#13495#0" />
+            <element signature="e#13537#13540#0" />
+            <element signature="e#13637#15739#0" />
+            <element signature="e#13676#15735#0" />
+            <element signature="e#13723#13727#0" />
+            <element signature="e#13768#13772#0" />
+            <element signature="e#13772#15727#0" />
+            <element signature="e#13953#14320#0" />
+            <element signature="e#14113#14117#0" />
+            <element signature="e#14226#14230#0" />
+            <element signature="e#14226#14230#0" />
+            <element signature="e#14304#14307#0" />
+            <element signature="e#14364#14727#0" />
+            <element signature="e#14514#14518#0" />
+            <element signature="e#14627#14631#0" />
+            <element signature="e#14627#14631#0" />
+            <element signature="e#14715#14718#0" />
+            <element signature="e#14769#14773#0" />
+            <element signature="e#14816#14822#0" />
+            <element signature="e#14859#14863#0" />
+            <element signature="e#14903#14909#0" />
+            <element signature="e#14941#14945#0" />
+            <element signature="e#14984#14990#0" />
+            <element signature="e#15023#15027#0" />
+            <element signature="e#15065#15071#0" />
+            <element signature="e#15109#15113#0" />
+            <element signature="e#15135#15141#0" />
+            <element signature="e#15180#15184#0" />
+            <element signature="e#15215#15221#0" />
+            <element signature="e#15259#15263#0" />
+            <element signature="e#15317#15323#0" />
+            <element signature="e#15363#15683#0" />
+            <element signature="e#15426#15606#0" />
+            <element signature="e#15606#15610#0" />
+            <element signature="e#15667#15670#0" />
+            <element signature="e#15784#15785#0" />
+            <element signature="e#15826#15829#0" />
+            <element signature="e#15863#15864#0" />
+            <element signature="e#15897#15900#0" />
+            <element signature="e#15934#15935#0" />
+            <element signature="e#15968#15971#0" />
+            <element signature="e#16030#16031#0" />
+            <element signature="e#16081#16084#0" />
+            <element signature="e#16132#16133#0" />
+            <element signature="e#16246#16249#0" />
+            <element signature="e#16309#16310#0" />
+            <element signature="e#16443#16446#0" />
+            <element signature="e#16486#16487#0" />
+            <element signature="e#16532#16535#0" />
+            <element signature="e#16592#16593#0" />
+            <element signature="e#16724#16727#0" />
+            <element signature="e#16778#16779#0" />
+            <element signature="e#16898#16901#0" />
+            <element signature="e#16954#16955#0" />
+            <element signature="e#17080#17083#0" />
+            <element signature="e#17134#17135#0" />
+            <element signature="e#17256#17259#0" />
+            <element signature="e#17318#17319#0" />
+            <element signature="e#17402#17405#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CC-master/server.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CC-master/__resource.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/__resource.lua" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/mysql-async.js" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/src/mysql.js" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/example.lua" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/src/webpack.config.js" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/lib/MySQL.lua" />
+    <entry file="file://$PROJECT_DIR$/../fivem-mysql-async-master/README.md" />
+    <entry file="file://$PROJECT_DIR$/../mysql-async/example.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mysql-async/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="340">
+            <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/CharacterCreator/Test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="947" selection-end-line="947" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../documents/Sergio-Coords.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="113" column="84" selection-start-line="113" selection-start-column="69" selection-end-line="113" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/Instance/README.md" />
+    <entry file="file://$PROJECT_DIR$/Vendors/Instance/__resource.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/Instance/locales/en.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/Instance/server/main.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/JSON/json.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/Instance/client/main.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/InteractSound/client/main.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/InteractSound/__resource.lua" />
+    <entry file="file://$PROJECT_DIR$/../coordsaver/client.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="64" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/InteractSound/server/main.lua" />
+    <entry file="file://$PROJECT_DIR$/Vendors/InteractSound/client/html/index.html" />
+    <entry file="file://$PROJECT_DIR$/Server/CalloutManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/CharacterCreator/Client/warmenu.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../InteractSound/__resource.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/Entityiter/entityiter.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/GameManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Spawn.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="40" column="60" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/CharacterCreator/Server/cc.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/PlayerProperties.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vendors/CharacterCreator/Client/cc.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="334" column="21" selection-start-line="334" selection-start-column="8" selection-end-line="334" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__resource.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#323#724#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/HUD.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Commands.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Interactions.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#146#1226#1" />
+            <element signature="e#2864#2868#0" />
+            <element signature="e#3055#3058#0" />
+            <element signature="e#3288#3292#0" />
+            <element signature="e#3450#3456#0" />
+            <element signature="e#3482#3486#0" />
+            <element signature="e#3648#3652#0" />
+            <element signature="e#3648#3652#0" />
+            <element signature="e#3814#3817#0" />
+            <element signature="e#3989#4853#0" />
+            <element signature="e#4044#4837#0" />
+            <element signature="e#4208#4212#0" />
+            <element signature="e#4350#4354#0" />
+            <element signature="e#4350#4354#0" />
+            <element signature="e#4492#4495#0" />
+            <element signature="e#4571#4575#0" />
+            <element signature="e#4693#4697#0" />
+            <element signature="e#4668#4672#0" />
+            <element signature="e#4778#4781#0" />
+            <element signature="e#4929#6164#0" />
+            <element signature="e#4947#6160#0" />
+            <element signature="e#5187#5419#0" />
+            <element signature="e#5350#5354#0" />
+            <element signature="e#5407#5410#0" />
+            <element signature="e#5508#5958#0" />
+            <element signature="e#5591#5946#0" />
+            <element signature="e#5733#5930#0" />
+            <element signature="e#5793#5797#0" />
+            <element signature="e#5871#5874#0" />
+            <element signature="e#5962#6152#0" />
+            <element signature="e#6086#6090#0" />
+            <element signature="e#6140#6143#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Engine.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="89" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#124#0" />
+            <element signature="e#288#872#0" />
+            <element signature="e#910#1494#0" />
+            <element signature="e#930#1677#0" />
+            <element signature="e#1720#1934#0" />
+            <element signature="e#2535#2749#0" />
+            <element signature="e#1979#2197#0" />
+            <element signature="e#2230#2408#0" />
+            <element signature="e#2298#2382#0" />
+            <element signature="e#3260#3438#0" />
+            <element signature="e#2442#2623#0" />
+            <element signature="e#2511#2596#0" />
+            <element signature="e#2656#2770#0" />
+            <element signature="e#2703#2766#0" />
+            <element signature="e#2813#3722#0" />
+            <element signature="e#2895#3625#0" />
+            <element signature="e#2928#3540#0" />
+            <element signature="e#2970#3528#0" />
+            <element signature="e#3015#3512#0" />
+            <element signature="e#3764#4768#0" />
+            <element signature="e#3878#4673#0" />
+            <element signature="e#3911#4589#0" />
+            <element signature="e#3953#4577#0" />
+            <element signature="e#3998#4561#0" />
+            <element signature="e#4429#4541#0" />
+            <element signature="e#4820#5740#0" />
+            <element signature="e#4921#5643#0" />
+            <element signature="e#4954#5558#0" />
+            <element signature="e#4996#5546#0" />
+            <element signature="e#5038#5530#0" />
+            <element signature="e#5087#5510#0" />
+            <element signature="e#5786#6700#0" />
+            <element signature="e#5900#6601#0" />
+            <element signature="e#5933#6513#0" />
+            <element signature="e#5975#6501#0" />
+            <element signature="e#6020#6485#0" />
+            <element signature="e#6353#6465#0" />
+            <element signature="e#6747#7592#0" />
+            <element signature="e#6831#7489#0" />
+            <element signature="e#6864#7400#0" />
+            <element signature="e#6906#7388#0" />
+            <element signature="e#6951#7372#0" />
+            <element signature="e#7637#7881#0" />
+            <element signature="e#7923#8050#0" />
+            <element signature="e#7967#8046#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/PedManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/PedManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
